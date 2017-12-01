@@ -70,16 +70,6 @@
                         </v-flex>
                         </v-layout>
                         <v-layout row wrap>
-                            <v-flex xs8>
-                                <v-checkbox
-                                label="Do you agree?"
-                                v-model="agree"
-                                error-messages="checkboxErrors"
-                                change="$v.checkbox.$touch()"
-                                blur="$v.checkbox.$touch()"
-                                required
-                                ></v-checkbox>
-                            </v-flex>
                             <v-flex>
                                 <v-btn @click='onRegisterNewDocument()'>Gravar
                                     <v-icon dark right>check_circle</v-icon>
@@ -114,8 +104,8 @@ export default {
         this.cpf !== '' &&
         this.email !== '' &&
         this.title !== '' &&
-        this.description !== '' &&
-        this.agree !== ''
+        this.description !== ''
+        // this.agree !== ''
     }
   },
   methods: {
@@ -127,8 +117,8 @@ export default {
         cpf: this.cpf,
         email: this.email,
         title: this.title,
-        description: this.description,
-        agree: this.agree
+        description: this.description
+        // agree: this.agree
       }
       console.log(newDocumentData)
       this.$store.dispatch('newDocument', newDocumentData)

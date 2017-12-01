@@ -2,7 +2,7 @@
     <div class='ListOfDocuments'>
         <v-layout class='document'>
             <v-flex xs12 sm6 offset-sm3>
-                <li class='document' v-for='document in listOfDocuments' :key='document.id'>
+                <li class='document' v-for='document in listOfDocuments' :key='document._id'>
                     <v-card>
                         <v-card-title primary-title>
                         <div>
@@ -13,7 +13,7 @@
                         </div>
                         </v-card-title>
                         <v-card-actions>
-                          <v-btn flat color="orange"  :to="'/list-of-documents/' + document.id">Explore</v-btn>
+                          <v-btn flat color="orange"  :to="'/list-of-documents/' + document._id">Explore</v-btn>
                         </v-card-actions>
                     </v-card>
                 </li>
@@ -30,6 +30,9 @@ export default {
     listOfDocuments () {
       return this.$store.getters.loadDocuments
     }
+  },
+  mounted: function () {
+    this.$store.dispatch('getAllDocumentsDatabase')
   }
 }
 </script>

@@ -5,6 +5,7 @@
       :clipped="clipped"
       v-model="drawer"
       app
+      blue light-4
     >
       <v-list>
         <v-list-tile
@@ -22,7 +23,7 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar app class='appToolbar'>
+    <v-toolbar app class='appToolbar blue lighten-1' >
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-btn flat :to="'/'" v-text="title"></v-btn>
       <v-spacer></v-spacer>
@@ -31,7 +32,7 @@
       </li>
     </v-toolbar>
      <router-view></router-view>
-    <v-footer :fixed="fixed" app>
+    <v-footer :fixed="fixed" app class='blue lighten-1'>
       <span>&copy; 2017</span>
     </v-footer>
   </v-app>

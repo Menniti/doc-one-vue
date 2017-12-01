@@ -38,10 +38,10 @@ export default {
     return {
     }
   },
-  props: ['id'],
+  props: ['_id'],
   computed: {
     document () {
-      return this.$store.getters.SingleDocument(this.$route.params.id)
+      return this.$store.getters.SingleDocument(this.$route.params._id)
     }
   },
   methods: {
